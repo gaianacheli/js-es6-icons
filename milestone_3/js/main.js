@@ -97,31 +97,50 @@ const icona = [
 	}
 ];
 
-
+const select = document.querySelector(".select")
 const container = document.querySelector(".cards")
- container.innerHTML = '';
-icona.forEach((icon, index, array)=>{
 
-    let color = '';
-
-    if (icon.type == 'animal'){
-        color = 'blue';
-    }else if (icon.type == 'vegetable'){
-        color = 'orange';
-    }else {
-        color = 'purple';
-    }
+select.addEventListener('change', printIcons)
 
 
-    const cardEl =`
-    <div class="card">
-    <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${color}"></i>  
-      <p>${icon.name}</p>
-    </div>
-    `
-    
-  //  console.log(cardEl);
-  container.innerHTML += cardEl;
-})
 
 
+function printIcons() {
+    const categoria = select.value
+    console.log(categoria);
+    var iconeToDisplay=icona.filter((icona)=>{
+        if(categoria=="all"){
+            return true
+        }
+        if(icona.type==categoria){
+            return true
+        }else{
+            return false
+        }
+    })
+
+    container.innerHTML="";
+    iconeToDisplay.forEach((icon, index, array)=>{
+        
+        var color = '';
+
+        if (icon.type == 'animal'){
+            color = 'blue';
+        }else if (icon.type == 'vegetable'){
+            color = 'orange';
+        }else {
+            color = 'purple';
+        }
+
+        const cardEl =`
+        <div class="card">
+        <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${color}"></i>  
+        <p>${icon.name}</p>
+        </div>
+        `
+        
+        //  console.log(cardEl);
+        container.innerHTML += cardEl;
+    }  )
+}
+printIcons();

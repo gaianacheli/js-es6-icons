@@ -6,6 +6,8 @@
 .contain {
     background-color: rgba(221, 221, 221, 1);
     width: 100%;
+    height: 100vh; 
+    overflow-y: scroll;
 }
 .titolo {
     color: rgba(41, 177, 221, 1);
