@@ -100,8 +100,8 @@ const icona = [
 icona.forEach((icon, index, array)=>{
     const cardEl =`
     <div class="card">
-    <i class="${icon.family} ${icon.prefix}${icon.type}"></i>  
-      <p>${icon.name}</p>
+    <i class="${icon.family} ${icon.prefix}${icon.name}"></i>  
+      <p>${icon.type}</p>
     </div>
     `
     console.log(cardEl);
