@@ -97,13 +97,31 @@ const icona = [
 	}
 ];
 
+
+const container = document.querySelector(".cards")
+ container.innerHTML = '';
 icona.forEach((icon, index, array)=>{
+
+    let color = '';
+
+    if (icon.type == 'animal'){
+        color = 'blue';
+    }else if (icon.type == 'vegetable'){
+        color = 'orange';
+    }else {
+        color = 'purple';
+    }
+
+
     const cardEl =`
     <div class="card">
-    <i class="${icon.family} ${icon.prefix}${icon.name}"></i>  
+    <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${color}"></i>  
       <p>${icon.name}</p>
     </div>
     `
-    console.log(cardEl);
-   document.querySelector(".cards").innerHTML += cardEl
+    
+  //  console.log(cardEl);
+  container.innerHTML += cardEl;
 })
+
+
