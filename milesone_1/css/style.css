@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contain {
+   
+    width: 100%;
+}
+.titolo {
+    color: rgba(41, 177, 221, 1);
+    padding: 0.5rem;
+}
+.type{
+ background-color: rgba(41, 177, 221, 1);
+ height: 50px;
+}
+.site_main {
+    background-color: rgba(221, 221, 221, 1);
+  
+}
